@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @font-face {
+      font-family: Hbold;
+      src:url(./assets/fonts/static/HankenGrotesk-Bold.ttf);
+    }
+    @font-face {
+      font-family: Hextrabold;
+      src:url(./assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+    }
+    @font-face {
+      font-family: Hmedium;
+      src:url(./assets/fonts/static/HankenGrotesk-Medium.ttf);
+    }
+    .flexbox {
+      display: flex;
+      margin: 10% 30%;
+      padding-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .first {
+      width: 50%;
+      background: linear-gradient( hsl(252, 100%, 67%), hsl(241, 81%, 54%))  ;
+      /* opacity: 0.8; */
+      border-radius: 10%;
+    }
+    .result {
+      padding: 20px;
+      font-weight: 500;
+    }
+    .centered {
+      text-align: center;
+    }
+    .marks>span {
+      font-family: Hextrabold;
+      font-size: 44px;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .great {
+      color: #fff;
+      font-family: Hextrabold;
+      font-weight: 500;
+    }
+    .marks {
+      margin-left: 25%;
+      margin-right: 25%;
+      padding: 13% 8%;
+      width: 34%;
+      border-radius: 50%;
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10% 16%;
+      line-height: 24px;
+      font-weight: 500;
+    }
+
+    p,.result,.marks {
+      color: hsl(221, 100%, 96%);
+      font-family: Hmedium;
+    }
+
+    .second {
+      width: 50%;
+      /* border-top-right-radius: 10%; */
+      /* border-bottom-right-radius: 10%; */
+      box-shadow: 10px 10px 20px rgb(234, 234, 234);
+    }
+    .summary {
+      color: hsl(224, 30%, 27%);
+      font-family: Hextrabold;
+      margin-bottom: 0;
+      margin-left: 10%;
+      margin-top: 10%;
+    }
+    table {
+      margin: 0 10%;
+      width: 80%;
+      border-spacing: 0 16px;
+      border-collapse: separate;
+      font-family: Hbold;
+    }
+
+    td:first-child {
+      border-radius: 5px 0 0 5px;
+    } 
+
+    td:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+    
+    #tr1 td, #tr2 td, #tr3 td, #tr4 td {
+      padding: 12px 0;
+      font-weight: 800;
+    }
+
+    #tr1 {
+      color: hsl(0, 100%, 67%);
+      background-color: hsl(0, 100%, 98%);
+    }
+
+    #tr2 {
+      color: hsl(39, 100%, 56%);
+      background-color: hsl(40, 92%, 98%);
+    }
+
+    #tr3 {
+      color: hsl(166, 100%, 37%);
+      background-color: hsl(167, 60%, 98%);
+    }
+
+    #tr4 {
+      color: hsl(234, 85%, 45%);
+      background-color: hsl(230, 50%, 98%);
+    }
+    
+    td>span {
+      color: hsl(224, 30%, 27%);
+      font-family: Hextrabold;
+    }
+    .continue {
+      width: 80%;
+      margin: 10% 10%;
+      padding: 10px 0;
+      color: hsl(221, 100%, 96%);
+      background-color: hsl(224, 30%, 27%);
+      border-radius: 25px;
+      border: none;
+      font-weight: 800;
+      font-family: Hmedium;
+    }
+
+    .continue:hover {
+      cursor: pointer;
+      background: linear-gradient( hsl(252, 100%, 67%), hsl(241, 81%, 54%))  ;
+    }
+    @media only screen and (max-width: 375px) {
+      body {
+        margin: 0;
+      }
+      .whole {
+        margin: 0;
+        flex-direction: column;
+      }
+      .first, .second {
+        width: 100%;
+      }
+      .first {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        
+      }
+      .result {
+        padding-top: 2%;
+        padding-bottom: 1%;
+        font-size: 12px;
+      }
+      .marks{
+      width: 10%;
+      margin-left: 38%;
+      font-size: 8px;
+      padding: 5% 8%;
+      border-radius: 50%;
+      background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      }
+      .marks>span {
+        font-size: 24px;
+        
+      }
+      .great {
+        font-size: 12px;
+        font-family: Hmedium;
+      }
+      p {
+        font-size: 8px;
+        text-align: center;
+        line-height: 8px;
+        font-family: Hmedium;
+        margin-top: 0;
+        margin-bottom: 7%;
+      }
+
+      table {
+        width: 90%;
+        border-spacing: 0 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      .summary {
+        font-size: 12px;
+        margin-top: 4%;
+        margin-left: 6%;
+      }
+      #tr1 td, #tr2 td, #tr3 td, #tr4 td{
+        font-size: 8px;
+        padding: 6px 0;
+      }
+      td>img {
+        height: 10px;
+        margin-left: 2%;
+        margin-right: 4%;
+      }
+      .continue {
+        width: 92%;
+        margin: 2% 4%;
+        padding: 6px 0;
+        font-size: 10px;
+        font-family: Hmedium;
+        font-weight: 500;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="flexbox whole">
+  <div class="first">
+  <h3 class="result centered">Your Result</h3>
+  <div class="marks centered"><span>76</span><br>
+  of 100</div>
+    <h2 class="great centered">Great</h2>
+  <p class=" centered">
+  You scored higher than 65% of the people who have taken these tests.
+    </p>
+</div>
+  <div class="second">
+  <h3 class="summary">Summary</h3>
+
+  <table>
+    <tr id="tr1">
+      <td>
+        <img src="./assets/images/icon-reaction.svg" alt="">
+     Reaction</td>
+      <td style="text-align: right;padding-right: 5%;"><span>80</span><span style="color: hsl(241, 100%, 89%)"> / 100</span></td>
+    </tr>
+
+    <tr id="tr2">
+      <td>
+        <img src="./assets/images/icon-memory.svg" alt="">
+      Memory</td>
+      <td style="text-align: right;padding-right: 5%;"><span>92</span> <span style="color: hsl(241, 100%, 89%)">/ 100</td></td>
+    </tr>
+  
+    <tr id="tr3">
+      <td>
+        <img src="./assets/images/icon-verbal.svg" alt="">
+     Verbal</td>
+      <td style="text-align: right;padding-right: 5%;"><span>61</span><span style="color: hsl(241, 100%, 89%)"> / 100</span></td>
+    </tr>
+  
+    <tr id="tr4">
+      <td>
+        <img src="./assets/images/icon-visual.svg" alt="">
+      Visual</td>
+      <td style="text-align: right;padding-right: 5%;"><span>72</span><span style="color: hsl(241, 100%, 89%)"> / 100</span></td>
+    </tr>
+  </table>
+
+    <button class="continue">Continue</button>
+  </div>
+</div>
+</body>
+</html>
